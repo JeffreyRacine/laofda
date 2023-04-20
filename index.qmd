@@ -8,7 +8,7 @@ author:
 institute:
 - ENSAI & CREST$^\dagger$, valentin.patilea@ensai.fr
 - McMaster University$^\ddagger$, racinej@mcmaster.ca
-date: 04/04/2023
+date: 04/24/2023
 date-format: full
 editor: source
 bibliography: slides.bib
@@ -84,7 +84,7 @@ source("R_scripts_data/func_lib.R")
 
 ::: {.nonincremental}
 
-- Link to slides - <a href="https://jeffreyracine.github.io/RBkeynote">jeffreyracine.github.io/RBkeynote</a> (case sensitive)
+- Link to slides - <a href="https://jeffreyracine.github.io/laofda">jeffreyracine.github.io/laofda</a> (case sensitive)
 
 - View **full screen** by pressing the F key (press the Esc key to revert)
 
