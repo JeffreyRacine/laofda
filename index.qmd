@@ -1331,6 +1331,10 @@ legend("topright",c("Reconstructed Estimator","Local Estimator","True Curve","Da
 
 -   Thus, our procedures require only that we retain and update vectors and matrices of length $\mathcal T_0$ and dimension $\mathcal T_0 \times \mathcal T_0$
 
+## Online Recursive Updating Clip
+
+{{< video R_scripts_data/movie.mov width="640" height="640">}}
+
 ## Recursive Updating: Finite-Sample Performance
 
 ::: {.panel-tabset}
@@ -1535,10 +1539,6 @@ knitr::kable(table.foo.200[,c(-2,-4)],
 -   A similar approach has been used in a classical *homoscedastic* nonparametric setting [@horowitz_spokoiny:2001, Equation (2.9)]
 
 -   We modify this for use in an FDA setting, and by exploiting "replication" (i.e., by averaging vertically *over all curves* at point $t$) we obtain a simple method for computing the measurement noise variance that allows for heteroscedasticity of unknown form
-
-## Appendix F: Online Recursive Updating Clip {#appmovie}
-
-{{< video R_scripts_data/movie.mov width="640" height="640">}}
 
 # References (scrollable) {.scrollable}
 
