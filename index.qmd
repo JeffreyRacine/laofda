@@ -114,7 +114,20 @@ Encourage participants to print/save a PDF copy of the slides as there is no gua
 
 One drawback with classical smoothing methods (kernels, splines, wavelets etc.) is their reliance on assuming the degree of smoothness (and thereby assuming continuous differentiability up to some order) for the underlying object being estimated. However, the underlying object may in fact be irregular (i.e., non-smooth and even perhaps nowhere differentiable) and, as well,  the (ir)regularity of the underlying function may vary across its support. Elaborate adaptive methods for curve estimation have been proposed, however, their intrinsic complexity presents a formidable and perhaps even insurmountable barrier to their widespread adoption by practitioners. We contribute to the functional data literature by providing a pointwise MSE-optimal, data-driven, iterative plug-in estimator of “local regularity” and a computationally attractive, recursive, online updating method. In so doing we are able to separate measurement error “noise” from “irregularity” thanks to “replication”, a hallmark of functional data. Our results open the door for the construction of minimax optimal rates, “honest” confidence intervals, and the like, for various quantities of interest.
 
-# Background
+
+# Outline of Talk
+
+- Modern data is often *functional* in nature (e.g., an electrocardiogram (ECG) and many other measures recorded by wearable devices) 
+
+- The analysis of functional data requires *nonparametric methods* 
+
+- However, nonparametric methods rely on *smoothness assumptions* (i.e., require you to assume something we don't know)
+
+- We show how we can learn the degree of (non)smoothness in functional data settings and we separate this from *measurement noise* (this cannot be done with classical data) 
+
+- This allows us to conduct functional data analysis that is optimal (we do this in a statistical framework) 
+
+- We emphasize *online* computation (i.e., how to update when new functional data becomes available)
 
 ::: {.notes}
 - Present overview of slides
@@ -126,13 +139,17 @@ One drawback with classical smoothing methods (kernels, splines, wavelets etc.) 
 
 ## Classical Versus Functional Data
 
--   Classical regression analysis dates to @galton:1894 and @pearson:1896 in the late 19th century
+-   A **defining feature of classical regression analysis** is that 
 
--   A **defining feature of classical regression analysis** is that **sample elements are random pairs**, $(y_i,x_i)$, while the *function of interest* $\mathbb{E}(Y|X=x)$ is *non-random*
+    - **sample elements are random pairs**, $(y_i,x_i)$
+    
+    - the *function of interest* $\mathbb{E}(Y|X=x)$ is *non-random*
 
--   Functional data analysis (FDA) dates to @grenander:1950 and @karhunen:1946 in the mid 20th century
+-   A **defining feature of functional data analysis ** is that
 
--   A **defining feature of functional data analysis ** is that **sample elements are random functions**, $X^{(i)}$, which are *also functions of interest*
+    - **sample elements are random functions**, $X^{(i)}$
+    
+    - these are *also functions of interest*
 
 - The following figure (@fig-sampleelements) presents $N=25$ sample elements (classical left plot, functional right plot)
 

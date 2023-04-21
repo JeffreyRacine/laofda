@@ -14,7 +14,7 @@
 
   <meta name="author" content="Valentin Patilea^\dagger">
   <meta name="author" content="Jeffrey S. Racine^\ddagger">
-  <title>quarto-input25ea6ff3</title>
+  <title>quarto-inputde13c3ce</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -420,8 +420,16 @@ Jeffrey S. Racine<span class="math inline">\(^\ddagger\)</span>
 </section>
 
 <section>
-<section id="background" class="title-slide slide level1 center">
-<h1>Background</h1>
+<section id="outline-of-talk" class="title-slide slide level1 center">
+<h1>Outline of Talk</h1>
+<ul>
+<li class="fragment"><p>Modern data is often <em>functional</em> in nature (e.g., an electrocardiogram (ECG) and many other measures recorded by wearable devices)</p></li>
+<li class="fragment"><p>The analysis of functional data requires <em>nonparametric methods</em></p></li>
+<li class="fragment"><p>However, nonparametric methods rely on <em>smoothness assumptions</em> (i.e., require you to assume something we don’t know)</p></li>
+<li class="fragment"><p>We show how we can learn the degree of (non)smoothness in functional data settings and we separate this from <em>measurement noise</em> (this cannot be done with classical data)</p></li>
+<li class="fragment"><p>This allows us to conduct functional data analysis that is optimal (we do this in a statistical framework)</p></li>
+<li class="fragment"><p>We emphasize <em>online</em> computation (i.e., how to update when new functional data becomes available)</p></li>
+</ul>
 <aside class="notes">
 <ul>
 <li><p>Present overview of slides</p></li>
@@ -443,10 +451,16 @@ Jeffrey S. Racine<span class="math inline">\(^\ddagger\)</span>
 <section id="classical-versus-functional-data" class="slide level2 center">
 <h2>Classical Versus Functional Data</h2>
 <ul>
-<li class="fragment"><p>Classical regression analysis dates to <span class="citation" data-cites="galton:1894">Galton (<a href="#/references-scrollable" role="doc-biblioref" onclick="">1894</a>)</span> and <span class="citation" data-cites="pearson:1896">Pearson (<a href="#/references-scrollable" role="doc-biblioref" onclick="">1896</a>)</span> in the late 19th century</p></li>
-<li class="fragment"><p>A <strong>defining feature of classical regression analysis</strong> is that <strong>sample elements are random pairs</strong>, <span class="math inline">\((y_i,x_i)\)</span>, while the <em>function of interest</em> <span class="math inline">\(\mathbb{E}(Y|X=x)\)</span> is <em>non-random</em></p></li>
-<li class="fragment"><p>Functional data analysis (FDA) dates to <span class="citation" data-cites="grenander:1950">Grenander (<a href="#/references-scrollable" role="doc-biblioref" onclick="">1950</a>)</span> and <span class="citation" data-cites="karhunen:1946">Karhunen (<a href="#/references-scrollable" role="doc-biblioref" onclick="">1946</a>)</span> in the mid 20th century</p></li>
-<li class="fragment"><p>A <strong>defining feature of functional data analysis </strong> is that <strong>sample elements are random functions</strong>, <span class="math inline">\(X^{(i)}\)</span>, which are <em>also functions of interest</em></p></li>
+<li class="fragment"><p>A <strong>defining feature of classical regression analysis</strong> is that</p>
+<ul>
+<li class="fragment"><p><strong>sample elements are random pairs</strong>, <span class="math inline">\((y_i,x_i)\)</span></p></li>
+<li class="fragment"><p>the <em>function of interest</em> <span class="math inline">\(\mathbb{E}(Y|X=x)\)</span> is <em>non-random</em></p></li>
+</ul></li>
+<li class="fragment"><p>A <strong>defining feature of functional data analysis </strong> is that</p>
+<ul>
+<li class="fragment"><p><strong>sample elements are random functions</strong>, <span class="math inline">\(X^{(i)}\)</span></p></li>
+<li class="fragment"><p>these are <em>also functions of interest</em></p></li>
+</ul></li>
 <li class="fragment"><p>The following figure (<a href="#/fig-sampleelements">Figure&nbsp;1</a>) presents <span class="math inline">\(N=25\)</span> sample elements (classical left plot, functional right plot)</p></li>
 </ul>
 <aside class="notes">
@@ -1463,9 +1477,6 @@ Epanechnikov, V. A. 1969. <span>“Nonparametric Estimation of a Multidimensiona
 <div id="ref-fda.usc" class="csl-entry" role="listitem">
 Febrero-Bande, Manuel, and Manuel Oviedo de la Fuente. 2012. <span>“Statistical Computing in Functional Data Analysis: The <span>R</span> Package <span class="nocase">fda.usc</span>.”</span> <em>Journal of Statistical Software</em> 51 (4): 1–28. <a href="https://www.jstatsoft.org/v51/i04/">https://www.jstatsoft.org/v51/i04/</a>.
 </div>
-<div id="ref-galton:1894" class="csl-entry" role="listitem">
-Galton, Francis. 1894. <em>Natural Inheritance</em>. 5th ed. New York: Macmillan; Company.
-</div>
 <div id="ref-gini_nickl:2010" class="csl-entry" role="listitem">
 Giné, Evarist, and Richard Nickl. 2010. <span>“<span class="nocase">Confidence bands in density estimation</span>.”</span> <em>The Annals of Statistics</em> 38 (2): 1122–70. <a href="https://doi.org/10.1214/09-AOS738">https://doi.org/10.1214/09-AOS738</a>.
 </div>
@@ -1475,9 +1486,6 @@ Gloter, Arnaud, and Marc Hoffmann. 2007. <span>“<span class="nocase">Estimatio
 <div id="ref-golovkine_klutchnikoff_patilea:2022" class="csl-entry" role="listitem">
 Golovkine, Steven, Nicolas Klutchnikoff, and Valentin Patilea. 2022. <span>“<span class="nocase">Learning the smoothness of noisy curves with application to online curve estimation</span>.”</span> <em>Electronic Journal of Statistics</em> 16 (1): 1485–1560. <a href="https://doi.org/10.1214/22-EJS1997">https://doi.org/10.1214/22-EJS1997</a>.
 </div>
-<div id="ref-grenander:1950" class="csl-entry" role="listitem">
-Grenander, U. 1950. <span>“Stochastic Processes and Statistical Inference.”</span> <em>Arkiv Matematik</em> 1: 195–277.
-</div>
 <div id="ref-hall_horowitz:2007" class="csl-entry" role="listitem">
 Hall, Peter, and Joel L. Horowitz. 2007. <span>“Methodology and Convergence Rates for Functional Linear Regression.”</span> <em>The Annals of Statistics</em> 35 (1): 70–91.
 </div>
@@ -1486,9 +1494,6 @@ Horowitz, Joel L., and Vladimir G. Spokoiny. 2001. <span>“An Adaptive, Rate-Op
 </div>
 <div id="ref-horvath_kokoszka:2012" class="csl-entry" role="listitem">
 Horváth, Lajos, and Piotr Kokoszka. 2012. <em>Inference for Functional Data with Applications</em>. Vol. 200. Springer Series in Statistics. https://doi.org/<a href="https://doi.org/10.1007/978-1-4614-3655-3">https://doi.org/10.1007/978-1-4614-3655-3</a>.
-</div>
-<div id="ref-karhunen:1946" class="csl-entry" role="listitem">
-Karhunen, Kari. 1946. <span>“Zur Spektraltheorie Stochastischer Prozesse.”</span> <em>Ann. Acad. Sci. Fenn. Ser. A. I Math.</em> 34: 1–7.
 </div>
 <div id="ref-kiefer_wolfowitz:1952" class="csl-entry" role="listitem">
 Kiefer, J., and J. Wolfowitz. 1952. <span>“<span class="nocase">Stochastic Estimation of the Maximum of a Regression Function</span>.”</span> <em>The Annals of Mathematical Statistics</em> 23 (3): 462–66. <a href="https://doi.org/10.1214/aoms/1177729392">https://doi.org/10.1214/aoms/1177729392</a>.
@@ -1507,9 +1512,6 @@ Nadaraya, E. A. 1965. <span>“On Nonparametric Estimates of Density Functions a
 </div>
 <div id="ref-padilla_segarra_et_al:2020" class="csl-entry" role="listitem">
 Padilla-Segarra, Adrián, Mabel González-Villacorte, Isidro R. Amaro, and Saba Infante. 2020. <span>“Brief Review of Functional Data Analysis: A Case Study on Regional Demographic and Economic Data.”</span> In <em>Information and Communication Technologies</em>, edited by Germania Rodriguez Morales, Efraín R. Fonseca C., Juan Pablo Salgado, Pablo Pérez-Gosende, Marcos Orellana Cordero, and Santiago Berrezueta, 163–76. Cham: Springer International Publishing.
-</div>
-<div id="ref-pearson:1896" class="csl-entry" role="listitem">
-Pearson, Karl. 1896. <span>“VII. Mathematical Contributions to the Theory of Evolution.—III. Regression, Heredity, and Panmixia.”</span> <em>Philosophical Transactions of the Royal Society of London. Series A, Containing Papers of a Mathematical or Physical Character</em>, no. 187: 253–318.
 </div>
 <div id="ref-peltier_vehel:1995" class="csl-entry" role="listitem">
 Peltier, Romain-François, and Jacques Lévy Véhel. 1995. <span>“<span class="nocase">Multifractional Brownian Motion : Definition and Preliminary Results</span>.”</span> Research Report RR-2645. <span>INRIA</span>. <a href="https://hal.inria.fr/inria-00074045">https://hal.inria.fr/inria-00074045</a>.
