@@ -744,9 +744,7 @@ Q *Can you provide a definition of “irregular function”?*
 
 -   We consider a meaningful regularity concept for the data generating process based on probability theory
 
--   We propose simple estimates for *local regularity* and demonstrate that real data may be irregular
-
--   We link process regularity to sample path regularity
+-   We propose simple estimates for *local regularity* and link process regularity to sample path regularity
 
 ::: {.notes}
 
