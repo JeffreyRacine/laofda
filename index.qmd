@@ -698,7 +698,7 @@ for (k in 1:35) {
 
     -   $\Gamma(\cdot,\cdot)$ on $\mathcal T_0 \times \mathcal T_0$
 
--   We are also concerned with computational limitations frequently encountered in this framework (we shall adopt a recursive solution)
+-   We are also concerned with computational limitations frequently encountered in this framework (we propose a recursive solution via stochastic approximation algorithms)
 
 -   We will be interested in updating estimates as new functional data arises ("online") as well as performing estimation on an existing set of curves ("batch")
 
@@ -706,7 +706,7 @@ for (k in 1:35) {
 
 -   One key distinguishing feature of FDA is that of "replication" (i.e., *common structure* among curves)
 
--   Essentially, there is prior information contained in the $N-1$ sample curves that can be exploited to learn about the $N$th sample curve, which is *not* available in, say, classical regression analysis
+-   Essentially, there is prior information in the $N-1$ sample curves that can be exploited to learn about the $N$th, which is *not* available in, say, classical regression analysis
 
 -   This common structure can be exploited for a variety of purposes
 
@@ -815,7 +815,7 @@ Q *Can you provide a definition of “irregular function”?*
 
 ##  Estimation
 
--   The idea is to estimate $\theta(t_1,t_3)$ and $\theta(t_1,t_2)$ averaging over curves
+-   The idea is to estimate $\theta(t_1,t_3)$ and $\theta(t_1,t_2)$ *averaging vertically* over curves
 
 -   Given estimates $\widehat\theta(t_1,t_3)$ and $\widehat\theta(t_1,t_2)$, the estimators of $H_{t}$ and $L_t$ are given by \begin{equation*}
      \widehat H_t =  \frac{\log(\widehat\theta(t_1,t_3)) - \log(\widehat\theta(t_1,t_2))}{2\log(2)},\quad

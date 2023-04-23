@@ -14,7 +14,7 @@
 
   <meta name="author" content="Valentin Patilea^\dagger">
   <meta name="author" content="Jeffrey S. Racine^\ddagger">
-  <title>quarto-inputf95c6380</title>
+  <title>quarto-input1ca4014d</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -757,7 +757,7 @@ Y^{(i)}_m = X^{(i)}(T^{(i)}_m) + \varepsilon^{(i)}_m,
 <li class="fragment"><p><span class="math inline">\(\mu(\cdot)\)</span>, <span class="math inline">\(\sigma(\cdot)\)</span>, <span class="math inline">\(f_T(\cdot)\)</span> on <span class="math inline">\(\mathcal T_0\)</span></p></li>
 <li class="fragment"><p><span class="math inline">\(\Gamma(\cdot,\cdot)\)</span> on <span class="math inline">\(\mathcal T_0 \times \mathcal T_0\)</span></p></li>
 </ul></li>
-<li class="fragment"><p>We are also concerned with computational limitations frequently encountered in this framework (we shall adopt a recursive solution)</p></li>
+<li class="fragment"><p>We are also concerned with computational limitations frequently encountered in this framework (we propose a recursive solution via stochastic approximation algorithms)</p></li>
 <li class="fragment"><p>We will be interested in updating estimates as new functional data arises (“online”) as well as performing estimation on an existing set of curves (“batch”)</p></li>
 </ul>
 </section>
@@ -765,7 +765,7 @@ Y^{(i)}_m = X^{(i)}(T^{(i)}_m) + \varepsilon^{(i)}_m,
 <h2>Replication</h2>
 <ul>
 <li class="fragment"><p>One key distinguishing feature of FDA is that of “replication” (i.e., <em>common structure</em> among curves)</p></li>
-<li class="fragment"><p>Essentially, there is prior information contained in the <span class="math inline">\(N-1\)</span> sample curves that can be exploited to learn about the <span class="math inline">\(N\)</span>th sample curve, which is <em>not</em> available in, say, classical regression analysis</p></li>
+<li class="fragment"><p>Essentially, there is prior information in the <span class="math inline">\(N-1\)</span> sample curves that can be exploited to learn about the <span class="math inline">\(N\)</span>th, which is <em>not</em> available in, say, classical regression analysis</p></li>
 <li class="fragment"><p>This common structure can be exploited for a variety of purposes</p></li>
 <li class="fragment"><p>For instance, it will allow us to obtain estimates of the <em>regularity</em> of the curves that may vary across their domain <span class="math inline">\(t\in[0,1]\)</span> (i.e., <em>local regularity</em> estimates)</p></li>
 <li class="fragment"><p>This would not be possible in the classical nonparametric setting where we are restricted to a single curve only</p></li>
@@ -893,7 +893,7 @@ L_t \approx \frac{\sqrt{\theta(t_1,t_3)}}{|t_1-t_3|^{H_t} } \quad \text{if }  |t
 <section id="estimation" class="slide level2 center">
 <h2>Estimation</h2>
 <ul>
-<li class="fragment"><p>The idea is to estimate <span class="math inline">\(\theta(t_1,t_3)\)</span> and <span class="math inline">\(\theta(t_1,t_2)\)</span> averaging over curves</p></li>
+<li class="fragment"><p>The idea is to estimate <span class="math inline">\(\theta(t_1,t_3)\)</span> and <span class="math inline">\(\theta(t_1,t_2)\)</span> <em>averaging vertically</em> over curves</p></li>
 <li class="fragment"><p>Given estimates <span class="math inline">\(\widehat\theta(t_1,t_3)\)</span> and <span class="math inline">\(\widehat\theta(t_1,t_2)\)</span>, the estimators of <span class="math inline">\(H_{t}\)</span> and <span class="math inline">\(L_t\)</span> are given by <span class="math display">\[\begin{equation*}
 \widehat H_t =  \frac{\log(\widehat\theta(t_1,t_3)) - \log(\widehat\theta(t_1,t_2))}{2\log(2)},\quad
 \widehat L_t = \frac{\sqrt{\widehat\theta(t_1,t_3)}}{|t_1-t_3|^{\widehat H_t} }
