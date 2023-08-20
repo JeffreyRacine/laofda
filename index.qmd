@@ -607,9 +607,9 @@ for (k in 1:35) {
 
 -   Our method adapts, *pointwise*, to
 
-    -   the *local regularity* of the underlying process (i.e., the Hölder exponent $H_t$ defined below) and to *measurement noise* (i.e., we are able to separate *noise* from *regularity* thanks to *replication*)
+    -   the *local regularity* of the underlying process (i.e., the Hölder exponent $H_t$ defined shortly and to *measurement noise* (i.e., we are able to separate *noise* from *regularity* thanks to *replication*)
 
-    -   the *purpose(s)* of estimation (i.e., $\mu(t)$ versus $\Gamma(s,t)$ defined below)
+    -   the *purpose(s)* of estimation (i.e., $\mu(t)$ versus $\Gamma(s,t)$ defined shortly)
 
 - Our method is computationally tractable:
 
