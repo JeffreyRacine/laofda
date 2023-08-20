@@ -7,3 +7,5 @@ This repository contains the Quarto/revealjs keynote slides for a joint project 
 The slides can be accessed via <https://jeffreyracine.github.io/laofda>
 
 The GitHub repository for this project is <https://github.com/JeffreyRacine/laofda> (you are here!)
+
+To generate the slides, a) click the CODE icon in the GitHub repository, b) click on Download ZIP, c) unzip the download, d) open index.qmd in RStudio, e) click Render in RStudio (you may have to install a few packages - click install if presented with the option), f) be patient, the code can take some time to run and complete.
